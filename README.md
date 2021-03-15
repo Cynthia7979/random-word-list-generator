@@ -4,26 +4,29 @@ Generate a random list of words for reciting.
 The source word list must be a `csv` file with two columns, the first column holding words and 
 the second holding meanings.
 
-The output file will be two `txt` files, the first containing chosen word on each line and 
-the second containing both the words and their meanings.
+When in `csv_mode`, `generate_list.py` generates two `csv` files, one containing only the words
+and the other with meanings.
+
+When `csv_mode` is set to `False`, `generate_list.py` generates two `txt` files.
 
 This program *should* be compatible with Python 2.
 
 ## Usage: Generate Lists
 Run file directly, or
 
-`python generate_list.py <source_list> <output_directory> [number_of_words] [number_of_lists]`
+`python generate_list.py <source_list> <output_directory> [number_of_words] [number_of_lists] [csv_mode]`
 
 * **`source_list`** Path of the whole word list.  
 Must be `csv` file - Use `process_excel.py` for conversions.
 * **`output_directory`** Path of where to output the `txt` files.
-* **`number_of_words`** Number of words to put in each list. Not required.
+* **`number_of_words`** Number of words to put in each list. Defaults to `30`. Not required.
 * **`number_of_lists`** Number of word lists to randomly generate at one time.  
 Note that for each list, two `txt` files will be generated, one containing only words
-and the other with meanings. Not required.
+and the other with meanings. Defaults to `1`. Not required.
+* **`csv_mode`** Whether or not to output `csv` files. Defaults to `True`.
 
 Note that `generate_list.py` uses `sys.argv`, not `argparser`, which means no help 
-messages will be shown if called with `-h` flag.
+messages will be shown if called with `-h` flag. Also, the non-required parameters are **positional**.
 
 
 ## Usage: `.xls` to `.csv`
