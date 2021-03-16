@@ -65,10 +65,10 @@ def main():
                 #     f.write(['%d. %s' % (a, word, meaning) for a in (i, i+1, i+2) for word in words[i:i+3] for ])
         else:
             with open(os.path.join(output_directory, 'Q List %d-%s.txt' % (list_num + 1, time_str)), 'w',
-                      encoding='utf-8') as f:
+                      encoding='gbk') as f:
                 f.write('\n'.join(list(new_list.keys())))
             with open(os.path.join(output_directory, 'A List %d-%s.txt' % (list_num + 1, time_str)), 'w',
-                      encoding='utf-8') as f:
+                      encoding='gbk') as f:
                 for word, meaning in new_list.items():
                     f.write('%s \t %s \n' % (word, meaning))
 
